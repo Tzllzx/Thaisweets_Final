@@ -1,0 +1,434 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&family=Anuphan:wght@300;400;600;700&display=swap');
+/* ------------------------------
+   ธีมร้านขนมไทย (น้ำตาล-ทอง)
+------------------------------ */
+
+body {
+   margin: 0;
+    font-family: "Anuphan", "Sarabun", sans-serif;
+    background-color: #fff8ec;
+    color: #4b2e1f;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(90deg, #6b3e26, #a97142);
+    padding: 18px 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    margin: 0;
+    color: #f1c27d;
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+
+.header nav a,
+.header nav span {
+    margin-left: 18px;
+    text-decoration: none;
+    color: #fff8ec;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.header nav a:hover {
+    color: #f1c27d;
+}
+
+/* Hero / Banner */
+.hero {
+    background: linear-gradient(#f9e4b7, #fff8ec);
+    text-align: center;
+    padding: 70px 20px;
+    border-bottom: 4px solid #f1c27d;
+}
+
+.hero h2 {
+    font-size: 34px;
+    margin-bottom: 10px;
+    color: #6b3e26;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #7a4a2e;
+}
+
+/* Button */
+.btn-main {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: linear-gradient(45deg, #c28b4a, #f1c27d);
+    color: #4b2e1f;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.btn-main:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+
+/* Section */
+section h2 {
+    color: #6b3e26;
+    font-size: 28px;
+}
+
+/* Product Card */
+.product-card {
+    background: #fff;
+    width: 220px;
+    padding: 15px;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.product-card h3 {
+    margin: 12px 0 5px;
+    color: #6b3e26;
+}
+
+.product-card p {
+    margin: 0;
+    font-weight: bold;
+    color: #a97142;
+}
+
+/* Table (Admin) */
+table {
+    border-collapse: collapse;
+}
+
+table th {
+    background: #6b3e26;
+    color: #fff8ec;
+}
+
+table td, table th {
+    padding: 12px 15px;
+}
+
+/* Form */
+input, button {
+    font-family: inherit;
+}
+
+input[type=text],
+input[type=password],
+input[type=number] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #d2b48c;
+    outline: none;
+}
+
+input:focus {
+    border-color: #a97142;
+}
+
+/* Footer */
+footer {
+    background: #6b3e26;
+    color: #fff8ec;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+/* ลายไทยพื้นหลัง */
+.thai-pattern {
+    background-color: #fff8ec;
+    background-image:
+        radial-gradient(circle at 10px 10px, rgba(241,194,125,0.25) 2px, transparent 0),
+        radial-gradient(circle at 30px 30px, rgba(169,113,66,0.18) 2px, transparent 0);
+    background-size: 40px 40px;
+}
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 40px;
+    background: linear-gradient(90deg, #7a4a1d, #a96a2d);
+    border-bottom: 4px solid #d6a85a;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* โลโก้ */
+.navbar .logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #fff3d6;
+    letter-spacing: 1px;
+}
+
+/* เมนู */
+.navbar nav {
+    display: flex;
+    gap: 15px;
+}
+
+/* ปุ่มเมนู */
+.navbar nav a {
+    text-decoration: none;
+    color: #fff3d6;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+/* hover หรู ๆ */
+.navbar nav a:hover {
+    background-color: #fff3d6;
+    color: #7a4a1d;
+    border: 1px solid #d6a85a;
+}
+
+/* เมนูหน้าปัจจุบัน (ถ้าอยากใช้) */
+.navbar nav a.active {
+    background-color: #d6a85a;
+    color: #5a320f;
+}
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* ===== TITLE ===== */
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    color: #7a4a1d;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #d6a85a, #a96a2d);
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 10px;
+}
+
+/* ===== GRID ===== */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+/* ===== PRODUCT CARD ===== */
+.product-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    border-color: #d6a85a;
+}
+
+/* ===== IMAGE ===== */
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+/* ===== NAME ===== */
+.product-card h3 {
+    font-size: 18px;
+    margin: 12px 0 5px;
+    color: #5a320f;
+}
+
+/* ===== PRICE ===== */
+.product-card .price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #a96a2d;
+    margin-bottom: 12px;
+}
+
+/* ===== CART BUTTON ===== */
+.btn-cart {
+    background: linear-gradient(90deg, #d6a85a, #a96a2d);
+    color: #5a320f;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-cart:hover {
+    background: linear-gradient(90deg, #a96a2d, #7a4a1d);
+    color: #fff3d6;
+}
+/* หน้า Cart ว่าง */
+.cart-empty-wrapper {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff7ed;
+}
+
+.cart-empty-box {
+    background: #ffffff;
+    padding: 40px 50px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    max-width: 420px;
+    width: 100%;
+}
+
+.cart-icon {
+    font-size: 70px;
+    margin-bottom: 15px;
+}
+
+.cart-empty-box h1 {
+    font-size: 26px;
+    color: #7c3f00;
+    margin-bottom: 10px;
+}
+
+.cart-empty-text {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.btn-shop {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #d97706;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-shop:hover {
+    background: #b45309;
+    transform: translateY(-2px);
+}
+:root{
+    --brown:#7a4a1d;
+    --brown-dark:#5a320f;
+    --gold:#d6a85a;
+    --cream:#fff6e5;
+}
+
+body{
+    background:var(--cream);
+    color:var(--brown-dark);
+}
+.navbar{
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+.navbar nav a:hover{
+    background:rgba(255,255,255,0.2);
+}
+.hero{
+    background:linear-gradient(
+        rgba(255,239,209,0.9),
+        rgba(255,239,209,0.9)
+    ),
+    url("assets/images/hero-bg.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+.hero h1{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:18px;
+}
+.slideshow-container{
+    box-shadow:0 15px 30px rgba(0,0,0,0.2);
+}
+
+.slide img{
+    transition:transform 0.6s ease;
+}
+
+.slide img:hover{
+    transform:scale(1.03);
+}
+.product-card{
+    transition:all 0.3s ease;
+    box-shadow:0 6px 16px rgba(0,0,0,0.12);
+}
+
+.product-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 28px rgba(0,0,0,0.18);
+}
+
+.product-card h3{
+    margin:10px 0 5px;
+}
+
+.product-card p{
+    color:#c65c14;
+    font-weight:bold;
+}
+button{
+    transition:all 0.3s ease;
+}
+
+button:hover{
+    background:#c99745;
+    transform:scale(1.05);
+}
+.promo{
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    font-size:18px;
+}
+
+
+
