@@ -13,24 +13,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
 
     if (isset($pdo)) {
-        // แนะนำ: ในอนาคตควรใช้ password_hash และ password_verify เพื่อความปลอดภัย
-        $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
-        $stmt->execute([$username, $password]);
+        // 1. ค้นหาผู้ใช้จาก username อย่างเดียว
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
+        $stmt->execute([$username]);
         $user = $stmt->fetch();
 
-        if ($user) {
+        // 2. ใช้ password_verify ตรวจสอบรหัสผ่านที่รับมาจากฟอร์ม กับรหัสที่เข้ารหัสใน DB
+        if ($user && password_verify($password, $user['password'])) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             $_SESSION['role'] = $user['role']; 
 
-            // --- ส่วนที่เพิ่มใหม่: อัปเดตสถานะออนไลน์ทันทีที่ล็อกอิน ---
+            // อัปเดตสถานะออนไลน์
             try {
                 $update_status = $pdo->prepare("UPDATE users SET last_active = NOW() WHERE id = ?");
                 $update_status->execute([$user['id']]);
             } catch (PDOException $e) {
-                // หากอัปเดตไม่ได้ ให้ข้ามไปก่อนเพื่อให้ล็อกอินสำเร็จ
+                // ข้าม
             }
-            // -----------------------------------------------------
 
             // แยกหน้าตาม Role
             if ($user['role'] === 'admin') {
@@ -40,6 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
             exit;
         } else {
+            // หากไม่พบ user หรือ password_verify คืนค่า false
             $error = "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง";
         }
     } else {
